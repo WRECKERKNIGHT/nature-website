@@ -365,3 +365,43 @@ section {
   transform-origin: center center;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
 }
+
+/* --- SCROLL PROGRESS --- */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(130, 224, 160, 0.9), rgba(96, 190, 224, 0.9));
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* --- KEYBOARD FOCUS --- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --- REDUCED MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  #scroll-progress {
+    display: none;
+  }
+}
