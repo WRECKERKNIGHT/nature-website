@@ -44,16 +44,55 @@
             <h2 class="section-title glass-card">Thriving Ecosystems</h2>
             <div class="cards-grid">
                 <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">🌲</div>
                     <h3>Forests</h3>
                     <p>The lungs of our planet, teeming with diverse life and towering canopies.</p>
                 </div>
                 <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">🌊</div>
                     <h3>Oceans</h3>
                     <p>Vast and mysterious, regulating climate and hosting incredible marine life.</p>
                 </div>
                 <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">⛰️</div>
                     <h3>Mountains</h3>
                     <p>Majestic peaks that touch the sky, harboring unique alpine flora and fauna.</p>
+                </div>
+                <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">🏜️</div>
+                    <h3>Deserts</h3>
+                    <p>Resilient realms of sand and stone, where life endures against the odds.</p>
+                </div>
+                <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">🪷</div>
+                    <h3>Wetlands</h3>
+                    <p>Natural water filters that buffer coastlines and shelter countless species.</p>
+                </div>
+                <div class="glass-card ecosystem-card">
+                    <div class="card-icon" aria-hidden="true">🐠</div>
+                    <h3>Coral Reefs</h3>
+                    <p>Underwater cities of dazzling color, supporting a quarter of all marine life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats-section" aria-label="Nature in numbers">
+            <div class="stats-grid">
+                <div class="glass-card stat-card">
+                    <span class="stat-value" data-target="8.7" data-suffix="M">0</span>
+                    <span class="stat-label">ESTIMATED SPECIES ON EARTH</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-value" data-target="71" data-suffix="%">0</span>
+                    <span class="stat-label">OF THE PLANET COVERED BY OCEAN</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-value" data-target="31" data-suffix="%">0</span>
+                    <span class="stat-label">OF LAND COVERED BY FOREST</span>
+                </div>
+                <div class="glass-card stat-card">
+                    <span class="stat-value" data-target="1" data-suffix="M">0</span>
+                    <span class="stat-label">SPECIES AT RISK OF EXTINCTION</span>
                 </div>
             </div>
         </section>
@@ -117,6 +156,7 @@
     <!-- ponytail: GSAP via CDN is one line vs dependency churn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module" src="/src/stats.js"></script>
     <script type="module" src="/src/main.js"></script>
 </body>
 </html>
