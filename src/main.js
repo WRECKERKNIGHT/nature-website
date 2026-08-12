@@ -32,6 +32,53 @@ document.addEventListener('DOMContentLoaded', () => {
     delay: 0.2
   });
 
+  // 1b. Navigation: scroll state, mobile menu, and scroll-spy
+  const nav = document.getElementById('site-nav');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  const setNavScrolled = () => {
+    if (!nav) return;
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  };
+  setNavScrolled();
+  window.addEventListener('scroll', setNavScrolled, { passive: true });
+
+  const closeMenu = () => {
+    if (!navToggle || !navLinks) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('open');
+    document.body.classList.remove('nav-open');
+  };
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  // Scroll-spy: highlight the nav link for the section in view
+  const sections = document.querySelectorAll('section[id]');
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks?.querySelectorAll('a').forEach((a) => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`);
+          });
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+    sections.forEach((section) => spy.observe(section));
+  }
+
   // 2. Parallax Video Background (Disabled for iframe stability)
 
   // 3. Staggered Grid Cards Entrance with 3D perspective
