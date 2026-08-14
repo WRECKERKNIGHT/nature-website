@@ -628,4 +628,185 @@ html.lenis, html.lenis body {
   stroke-linecap: round;
 }
 
+/* --- KINETIC TYPE BAND --- */
+.kinetic-band {
+  min-height: 62vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vh, 1.5rem);
+  overflow: hidden;
+  padding: 4vh 0;
+}
+.kinetic-row {
+  display: flex;
+  gap: clamp(2rem, 6vw, 5rem);
+  white-space: nowrap;
+  font-size: clamp(2.6rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  will-change: transform;
+}
+.k-row-1 {
+  transform: rotate(1deg);
+}
+.k-row-2 {
+  -webkit-text-stroke: 1.5px rgba(130, 224, 160, 0.55);
+  transform: rotate(-1.5deg);
+}
+.k-row-3 {
+  transform: rotate(-0.5deg);
+}
+
+/* --- SCROLL STORY --- */
+.story-section {
+  position: relative;
+  text-align: center;
+}
+.story-section.js-story {
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(6, 18, 12, 0.35);
+  transition: background-color 0.8s ease;
+}
+.story-section.tint-2 {
+  background-color: rgba(9, 30, 24, 0.42);
+}
+.story-section.tint-3 {
+  background-color: rgba(4, 22, 34, 0.44);
+}
+.story-section.tint-4 {
+  background-color: rgba(24, 16, 34, 0.42);
+}
+.story-section.tint-5 {
+  background-color: rgba(12, 8, 6, 0.45);
+}
+.story-section.js-story .story-chapter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 5vw;
+  opacity: 0;
+  pointer-events: none;
+}
+.story-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.story-line {
+  font-size: clamp(1.8rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 900px;
+  text-wrap: balance;
+}
+.story-word {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform;
+}
+.story-rail {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(320px, 70vw);
+}
+.story-count {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+.story-bar {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.story-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #82e0a0, #a8e6cf);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.story-lock {
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  opacity: 0.7;
+}
+.story-lock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #82e0a0;
+  animation: lock-pulse 1.6s infinite;
+}
+@keyframes lock-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(130, 224, 160, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(130, 224, 160, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(130, 224, 160, 0);
+  }
+}
+
+/* --- MORPHING WORD --- */
+.morph-section {
+  text-align: center;
+}
+.morph-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.morph-lead {
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.morph-word {
+  display: inline-block;
+  min-height: 1.1em;
+  font-size: clamp(2.6rem, 10vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(120deg, #82e0a0, #b5e8d0 45%, #7fd4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  will-change: transform, opacity, filter;
+}
+.morph-hint {
+  margin-top: 28px;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  opacity: 0.55;
+}
+
 
