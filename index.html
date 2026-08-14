@@ -32,9 +32,20 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="glass-nav">
+    <nav class="glass-nav" id="site-nav" aria-label="Primary">
         <div class="logo">Nature.</div>
-        <ul class="nav-links">
+        <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Toggle navigation menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#explore">Explore</a></li>
             <li><a href="#ecosystems">Ecosystems</a></li>
             <li><a href="#resources">Resources</a></li>
