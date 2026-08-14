@@ -316,6 +316,43 @@ section {
   text-transform: uppercase;
 }
 
+/* --- INVOLVEMENT --- */
+.involvement-section {
+  align-items: center;
+}
+.involvement-intro {
+  max-width: 640px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+.action-card {
+  text-align: center;
+  padding: 40px 26px;
+}
+.action-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+.action-card p {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+.involvement-cta {
+  margin-top: 48px;
+  text-align: center;
+}
+.involvement-cta p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
 .conservation-section {
   align-items: center;
 }
