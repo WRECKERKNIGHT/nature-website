@@ -19,10 +19,6 @@ body {
   background-color: #000; /* Fallback before video loads */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* --- VIDEO BACKGROUND --- */
 .video-container {
   position: fixed;
@@ -210,10 +206,6 @@ html {
 }
 
 /* --- SECTIONS --- */
-main {
-  perspective: 1000px;
-}
-
 section {
   min-height: 100vh;
   padding: 120px 5% 50px;
