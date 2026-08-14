@@ -170,22 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     );
   }
-
-  // 8. Custom Leaf Cursor
-  const leafCursor = document.createElement('div');
-  leafCursor.className = 'leaf-cursor';
-  leafCursor.innerHTML = '🍁';
-  document.body.appendChild(leafCursor);
-
-  gsap.set(leafCursor, { xPercent: -50, yPercent: -50 });
-
-  window.addEventListener('mousemove', (e) => {
-    gsap.to(leafCursor, {
-      x: e.clientX,
-      y: e.clientY,
-      duration: 0.15,
-      ease: "power2.out",
-      overwrite: "auto"
-    });
-  });
 });

@@ -10,7 +10,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none !important;
 }
 
 body {
@@ -277,12 +276,6 @@ section {
   opacity: 0.8;
   line-height: 1.6;
 }
-.card-icon {
-  font-size: 2.6rem;
-  line-height: 1;
-  margin-bottom: 16px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
-}
 
 /* --- STATS --- */
 .stats-section {
@@ -350,20 +343,6 @@ section {
   -webkit-backdrop-filter: blur(12px) brightness(1.2);
   pointer-events: none;
   z-index: 9999;
-}
-
-/* --- LEAF CURSOR --- */
-.leaf-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  font-size: 32px;
-  opacity: 0.4; /* Extremely translucent */
-  mix-blend-mode: hard-light; /* Blends beautifully with the background */
-  pointer-events: none;
-  z-index: 10000;
-  transform-origin: center center;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
 }
 
 /* --- SCROLL PROGRESS --- */
@@ -574,9 +553,6 @@ html.lenis, html.lenis body {
   opacity: 0.82;
   line-height: 1.6;
 }
-.flow-card .card-icon {
-  font-size: 3.2rem;
-}
 .flow-hint {
   position: absolute;
   bottom: 28px;
@@ -613,23 +589,6 @@ html.lenis, html.lenis body {
 .ring-fill {
   stroke: rgba(130, 224, 160, 0.9);
   stroke-linecap: round;
-}
-
-/* --- FLOATING PARTICLES --- */
-.particle-layer {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 5;
-}
-.leaf-particle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  will-change: transform;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-  mix-blend-mode: screen;
 }
 
 
