@@ -20,6 +20,11 @@ tag.src = "https://www.youtube.com/iframe_api";
 document.head.appendChild(tag);
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Respect reduced-motion: present a calm, static page with no decorative motion
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+
   // Register ScrollTrigger
   gsap.registerPlugin(ScrollTrigger);
 
