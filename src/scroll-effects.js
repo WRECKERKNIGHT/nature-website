@@ -194,44 +194,6 @@
   updateRing();
   window.addEventListener('scroll', updateRing, { passive: true });
 
-  const particleChars = ['🍃', '🍂', '✨', '🌸', '🌿'];
-  const particles = [];
-  const particleLayer = document.createElement('div');
-  particleLayer.className = 'particle-layer';
-  particleLayer.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(particleLayer);
-
-  for (let i = 0; i < 16; i++) {
-    const el = document.createElement('span');
-    el.className = 'leaf-particle';
-    el.textContent = particleChars[i % particleChars.length];
-    el.style.fontSize = `${14 + Math.random() * 18}px`;
-    el.style.opacity = `${0.18 + Math.random() * 0.4}`;
-    particleLayer.appendChild(el);
-    particles.push({
-      el,
-      x: Math.random() * window.innerWidth,
-      y: Math.random() * window.innerHeight,
-      speed: 0.3 + Math.random() * 0.7,
-      drift: (Math.random() - 0.5) * 1.4,
-      sway: 1.5 + Math.random() * 2.5,
-      phase: Math.random() * Math.PI * 2,
-    });
-  }
-
-  gsap.ticker.add(() => {
-    const boost = 1 + Math.min(Math.abs(velocity.smoothed) * 0.12, 2.5);
-    particles.forEach((p) => {
-      p.y += p.speed * boost;
-      p.x += Math.sin(p.phase) * p.sway * 0.08 + p.drift;
-      p.phase += 0.02 * boost;
-      if (p.y > window.innerHeight + 30) p.y = -30;
-      if (p.x > window.innerWidth + 30) p.x = -30;
-      if (p.x < -30) p.x = window.innerWidth + 30;
-      p.el.style.transform = `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.phase * 40}deg)`;
-    });
-  });
-
   const tiltCards = document.querySelectorAll('.ecosystem-card, .resource-card');
   tiltCards.forEach((card) => {
     gsap.set(card, { transformPerspective: 800, transformOrigin: 'center center' });
