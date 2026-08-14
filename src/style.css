@@ -501,48 +501,28 @@ button:focus-visible {
   pointer-events: auto;
 }
 
-/* --- LENIS SMOOTH SCROLL --- */
-html.lenis, html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-/* --- HORIZONTAL JOURNEY --- */
+/* --- JOURNEY --- */
 .flow-section {
-  height: 100vh;
-  min-height: 520px;
-  justify-content: center;
-  overflow: hidden;
+  align-items: center;
 }
 .flow-title {
   margin-bottom: 56px;
 }
 .flow-track {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  width: max-content;
-  will-change: transform;
-  padding-right: 10vw;
+  width: 100%;
+  max-width: 1200px;
 }
 .flow-card {
-  flex: 0 0 auto;
-  width: min(420px, 78vw);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 48px 34px;
-  min-height: 340px;
+  min-height: 300px;
 }
 .flow-card h3 {
   font-size: 1.9rem;
@@ -554,41 +534,12 @@ html.lenis, html.lenis body {
   line-height: 1.6;
 }
 .flow-hint {
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
+  margin-top: 48px;
   text-align: center;
   font-size: 0.72rem;
   letter-spacing: 0.32em;
   opacity: 0.55;
 }
 
-/* --- SCROLL PROGRESS RING --- */
-.scroll-ring {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  width: 44px;
-  height: 44px;
-  z-index: 150;
-  pointer-events: none;
-}
-.scroll-ring svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-}
-.scroll-ring circle {
-  fill: none;
-  stroke-width: 2.5;
-}
-.ring-track {
-  stroke: rgba(255, 255, 255, 0.18);
-}
-.ring-fill {
-  stroke: rgba(130, 224, 160, 0.9);
-  stroke-linecap: round;
-}
 
 
