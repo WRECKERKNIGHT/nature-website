@@ -277,6 +277,44 @@ section {
   opacity: 0.8;
   line-height: 1.6;
 }
+.card-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+}
+
+/* --- STATS --- */
+.stats-section {
+  min-height: auto;
+  padding: 80px 5%;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+.stat-card {
+  text-align: center;
+  padding: 36px 20px;
+}
+.stat-value {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  opacity: 0.75;
+  text-transform: uppercase;
+}
 
 .conservation-section {
   align-items: center;
